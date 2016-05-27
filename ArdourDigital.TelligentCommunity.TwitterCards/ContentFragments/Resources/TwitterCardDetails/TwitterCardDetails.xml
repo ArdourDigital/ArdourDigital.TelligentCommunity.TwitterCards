@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<scriptedContentFragments>
+  <scriptedContentFragment
+    name="${resource:Fragment_ContentFragment1_Name}"
+    cssClass=""
+    description="${resource:Fragment_ContentFragment1_Description}"
+    instanceIdentifier="5b56ce83-2526-4e21-87d2-419ca6a7f9ec"
+    isCacheable="true"
+    varyCacheByUser="false"
+    showHeaderByDefault="false">
+    <contentScript>
+      <![CDATA[#set($content = $core_v2_content.Current)
+#set($siteUsername = $ardour_v1_twitterCards.SiteUsername)
+#set($hasOpenGraphImage = $ardour_v1_twitterCards.HasOpenGraphImage($content.ContentId, $content.ContentTypeId))
+#set($cardType = 'summary')
+
+#if(!$siteUsername)
+    $core_v2_widget.Hide()
+#end
+
+#if($content)
+    #set($authorUsername = $ardour_v1_twitterCards.AuthorUsername($content.ContentId, $content.ContentTypeId))
+    
+    #if ($authorUsername)
+        $core_v2_page.AddMetaTag('twitter:creator', $authorUsername)
+    #end
+#end
+
+#if(!$hasOpenGraphImage)
+  #set($imageUrl = false)
+  #set($feature = $core_v3_feature.Get($content.ContentId, $content.ContentTypeId, "%{ }"))
+
+  #if ($feature && $feature.Image)
+      #set($imageUrl = $feature.Image)
+  #end
+  
+  #if(!$imageUrl)
+    #set($typedContent = false)
+    #if($content.ContentTypeId == $core_v2_blogPost.ContentTypeId)
+      #set($typedContent = $core_v2_blogPost.Get($content.ContentId))
+    #elseif($content.ContentTypeId == $core_v2_forumThread.ContentTypeId)
+      #set($typedContent = $core_v2_forumThread.Get($content.ContentId))
+    #elseif($content.ContentTypeId == $core_v2_media.ContentTypeId)
+      #set($typedContent = $core_v2_media.Get($content.ContentId))
+    #end
+      
+    #if($typedContent.File && $ardour_v1_twitterCards.IsImageContentType($typedContent.File.ContentType))
+      #set($imageUrl = $typedContent.File.FileUrl)
+    #end
+  #end
+  
+  #if($imageUrl)
+      #set($cardType = 'summary_large_image')
+      $core_v2_page.AddOpenGraphMetaTag('og:image', $core_v2_urls.FullPath($imageUrl))
+  #end
+#end 
+
+$core_v2_page.AddMetaTag('twitter:card', $cardType)
+$core_v2_page.AddMetaTag('twitter:site', $siteUsername)
+      ]]>
+    </contentScript>
+    <languageResources>
+      <language key="en-us">
+        <resource name="Fragment_ContentFragment1_Name">Twitter Card Details</resource>
+        <resource name="Fragment_ContentFragment1_Description">Adds the relevant meta tags to the page headers to enable Twitter Cards.</resource>
+      </language>
+    </languageResources>
+  </scriptedContentFragment>
+</scriptedContentFragments>
