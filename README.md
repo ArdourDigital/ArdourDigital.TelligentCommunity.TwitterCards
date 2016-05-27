@@ -6,7 +6,7 @@ Twitter Card plugin for Telligent Community.
 
 Telligent Community 9 comes with improved SEO and Open Graph support, but does not add the tags required to show a preview of content when the content is tweeted. For this to happen you need an additional `twitter:card` and `twitter:site` meta tag, these will work with the title and description tags already output to give a preview of the content.
 
-![Example tweet with picture](assets/example.png)
+![Example tweet with picture](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.TwitterCards/master/Assets/example.PNG)
 
 ## Supported Versions
 This plugin should work with the following versions of Telligent Community
@@ -24,7 +24,7 @@ The plugin can then be enabled by logging in as an administrator, and going to `
 
 Before enabling the plugin you must enter the twitter username that represents the site (including the `@` sign), check the `Enabled` check box, and `Save`.
 
-![Example tweet with picture](assets/plugin-configuration.png)
+![Example tweet with picture](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.TwitterCards/master/Assets/plugin-configuration.png)
 
 Once the plugin is enabled add the `Twitter Card Details` widget to the site wide header or footer (and ensure it is locked so it is used by all pages).
 
