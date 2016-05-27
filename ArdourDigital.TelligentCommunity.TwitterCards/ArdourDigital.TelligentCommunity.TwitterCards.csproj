@@ -42,8 +42,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telligent.DynamicConfiguration">
-      <HintPath>..\Library\Telligent\Website\Telligent.DynamicConfiguration.dll</HintPath>
+    <Reference Include="Telligent.DynamicConfiguration, Version=0.1.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TelligentLibs\Telligent.DynamicConfiguration.dll</HintPath>
     </Reference>
     <Reference Include="Telligent.Evolution.Api, Version=9.1.0.792, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
