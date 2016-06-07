@@ -14,7 +14,7 @@ This plugin should work with the following versions of Telligent Community
 
 ## Installation
 
-You can install the plugin by [downloading the latest version](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Core.UI/releases/latest) and adding it to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
+You can install the plugin by [downloading the latest version](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.TwitterCards/releases/latest) and adding it to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
 
 ```
 Install-Package ArdourDigital.TelligentCommunity.TwitterCards
