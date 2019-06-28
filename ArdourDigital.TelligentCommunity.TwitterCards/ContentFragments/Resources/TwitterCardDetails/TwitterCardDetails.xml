@@ -53,6 +53,8 @@
       #set($cardType = 'summary_large_image')
       $core_v2_page.AddOpenGraphMetaTag('og:image', $core_v2_urls.FullPath($imageUrl))
   #end
+#else
+  #set($cardType = 'summary_large_image')
 #end 
 
 $core_v2_page.AddMetaTag('twitter:card', $cardType)
