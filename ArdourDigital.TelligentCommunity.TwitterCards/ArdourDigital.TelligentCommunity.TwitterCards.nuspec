@@ -7,11 +7,12 @@
     <id>ArdourDigital.TelligentCommunity.TwitterCards</id>
     <version>$version$</version>
     <authors>Ardour Digital Limited</authors>
-    <description>Twitter Card support for Telligent Community</description>
+    <description>Twitter Card support for Verint / Telligent Community</description>
     <language>en-US</language>
     <licenseUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.TwitterCards/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.TwitterCards</projectUrl>
-    <copyright>2016 - Ardour Digital Limited</copyright>
-    <tags>Telligent, Telligent Community</tags>    
+    <copyright>2019 - Ardour Digital Limited</copyright>
+    <tags>Telligent, Telligent Community, Verint Community</tags>
+    <iconUrl>https://ardourdigital-assets.s3.eu-west-2.amazonaws.com/logos/nuget/nuget.jpg</iconUrl>    
   </metadata>
 </package>
